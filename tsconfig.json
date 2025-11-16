@@ -7,7 +7,7 @@
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
     "target": "ES2021",
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
@@ -17,13 +17,16 @@
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
     "paths": {
       "@notification/common": ["./src/00.common/index"],
       "@notification/domain": ["./src/01.domain/index"],
       "@notification/service": ["./src/01.domain/service/index"],
-      "@notification/adapter": ["src/02.adapter/index"],
-      "@notification/infrastructure": ["src/03.infrastructure/index"],
+      "@notification/adapter": ["./src/02.adapter/index"],
+      "@notification/infrastructure": ["./src/03.infrastructure/index"],
       "@notification/helper": ["./src/99.helper/index"]
     }
   },
+  "include": ["src", "libs", "**/*.spec.ts", "**/*.test.ts"]
 }
