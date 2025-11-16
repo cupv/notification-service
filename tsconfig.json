@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "skipLibCheck": true,
+    "strictNullChecks": false,
+    "noImplicitAny": false,
+    "strictBindCallApply": false,
+    "forceConsistentCasingInFileNames": false,
+    "noFallthroughCasesInSwitch": false,
+    "paths": {
+      "@notification/common": ["./src/00.common/index"],
+      "@notification/domain": ["./src/01.domain/index"],
+      "@notification/service": ["./src/01.domain/service/index"],
+      "@notification/adapter": ["src/02.adapter/index"],
+      "@notification/infrastructure": ["src/03.infrastructure/index"],
+      "@notification/helper": ["./src/99.helper/index"]
+    }
+  },
+}
