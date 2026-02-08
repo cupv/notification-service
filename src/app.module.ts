@@ -1,4 +1,3 @@
-// src/app.module.ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -17,22 +16,22 @@ import { controllers } from '@notification/adapter';
       isGlobal: true,
       envFilePath: '.env',
     }),
-    // MongooseModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   useFactory: async (configService: ConfigService) => {
-    //     return {
-    //       uri: configService.get<string>('MONGODB_URI'),
-    //     };
-    //   },
-    //   inject: [ConfigService],
+    MongooseModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => {
+        return {
+          uri: configService.get<string>('MONGODB_URI'),
+        };
+      },
+      inject: [ConfigService],
+    }),
+    MongooseModule.forFeature([...schemaRegisters]),
+    // KafkaModule.forRoot({
+    //   clientId: 'notification-service',
+    //   brokers: ['localhost:19092'],
     // }),
-    // MongooseModule.forFeature([...schemaRegisters]),
-    KafkaModule.forRoot({
-      clientId: 'notification-service',
-      brokers: ['localhost:19092'],
-    })
   ],
   controllers: [...controllers],
   providers: [...services, ...externalServices, ...storageRepositories],
 })
-export class AppModule { }
+export class AppModule {}
