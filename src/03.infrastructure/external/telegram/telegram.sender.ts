@@ -1,7 +1,10 @@
 import { SenderServicePort } from "@notification/service";
 
 export class TelegramSender implements SenderServicePort {
-  execute(data: any): Promise<boolean> {
-    throw new Error('Method not implemented.');
+  async execute(data: any): Promise<boolean> {
+
+    console.log('Send data to telegram', data)
+
+    return true;
   }
 }

@@ -36,4 +36,6 @@ $ yarn run test:e2e
 $ yarn run test:cov
 ```
 
-## 
+## Implement flow create ticket for miss chat, miss call
+
+- chat session end -> trigger -> creat a ticket miss chat

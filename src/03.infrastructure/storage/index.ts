@@ -6,17 +6,15 @@ import {
 import { NotificationRepository } from './mongoose';
 import { LocalNotificationRepository } from './local';
 
-export * from './mongoose';
-export * from './kafka';
-export * from './mongoose';
+export { schemaRegisters } from './mongoose';
 
 export const storageRepositories: Provider[] = [
   {
     provide: LOCAL_NOTIFICATION_REPOSITORY_TOKEN,
     useClass: LocalNotificationRepository,
   },
-  {
-    provide: MONGOOSE_NOTIFICATION_REPOSITORY_TOKEN,
-    useClass: NotificationRepository,
-  },
+  // {
+  //   provide: MONGOOSE_NOTIFICATION_REPOSITORY_TOKEN,
+  //   useClass: NotificationRepository,
+  // },
 ];

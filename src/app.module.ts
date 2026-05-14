@@ -1,3 +1,4 @@
+// src/app.module.ts
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
@@ -7,7 +8,6 @@ import {
   schemaRegisters,
   storageRepositories,
 } from '@notification/infrastructure';
-import { KafkaModule } from '@notification/infrastructure';
 import { controllers } from '@notification/adapter';
 
 @Module({
@@ -29,9 +29,9 @@ import { controllers } from '@notification/adapter';
     // KafkaModule.forRoot({
     //   clientId: 'notification-service',
     //   brokers: ['localhost:19092'],
-    // }),
+    // })
   ],
   controllers: [...controllers],
   providers: [...services, ...externalServices, ...storageRepositories],
 })
-export class AppModule {}
+export class AppModule { }

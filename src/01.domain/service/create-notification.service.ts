@@ -5,7 +5,6 @@ import {
 } from './create-notification.service.port';
 import {
   LOCAL_NOTIFICATION_REPOSITORY_TOKEN,
-  MONGOOSE_NOTIFICATION_REPOSITORY_TOKEN,
   NOTIFIER_SERVICE_TOKEN,
 } from '@notification/common';
 import { NotificationRepositoryPort } from '@notification/domain';
@@ -15,7 +14,7 @@ export class CreateNotificationService
   implements CreateNotificationServicePort
 {
   constructor(
-    @Inject(MONGOOSE_NOTIFICATION_REPOSITORY_TOKEN)
+    @Inject(LOCAL_NOTIFICATION_REPOSITORY_TOKEN)
     private readonly notificationRepository: NotificationRepositoryPort,
     @Inject(NOTIFIER_SERVICE_TOKEN)
     private readonly notifierService: NotifierServicePort,
@@ -39,7 +38,7 @@ export class CreateNotificationService
       title,
     });
 
-    // send notity
+    // send notify
     this.notifierService.send(platform).then();
 
     return notificationId;

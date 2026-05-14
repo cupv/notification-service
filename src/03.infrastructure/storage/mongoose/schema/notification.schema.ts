@@ -12,7 +12,7 @@ export class NotificationDocument extends Document {
   @Prop({ required: true, type: String })
   content: string;
 
-  @Prop({ required: false, type: String })
+  @Prop({ required: true, type: String })
   redirectUrl: string;
 
   @Prop({ required: true, type: Number })
