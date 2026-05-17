@@ -1,3 +1,4 @@
+import { ChatSessionDocument, ChatSessionSchema } from './chat-session.schema';
 import {
   NotificationDocument,
   NotificationSchema,
@@ -13,4 +14,5 @@ export const schemaRegisters: SchemaRegister[] = [
     name: NotificationDocument.name,
     schema: NotificationSchema,
   },
+  { name: ChatSessionDocument.name, schema: ChatSessionSchema },
 ];
