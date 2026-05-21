@@ -5,7 +5,7 @@ Designed with scalability, modularity, and clean architecture in mind.
 
 ---
 
-## 📦 Project Setup
+## Project Setup
 
 ### Install dependencies:
 
