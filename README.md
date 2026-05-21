@@ -1,41 +1,26 @@
-# Notification service
+# Notification Service
 
-## Description
+A flexible and extensible microservice for sending notifications across multiple channels such as FCM, Webhook, Gmail, Telegram, and more.  
+Designed with scalability, modularity, and clean architecture in mind.
 
-Th service to send notifies for multiple connector, destination sources (FCM, Webhook, Gmail, Telegram ...)
+---
 
-## Project setup
+## 📦 Project Setup
 
-```bash
-$ yarn install
-```
+### Install dependencies:
 
-## Compile and run the project
+`yarn install`
 
-```bash
-# development
-$ yarn run start
+### Development
 
-# watch mode
-$ yarn run start:dev
+`yarn start`
 
-# production mode
-$ yarn run start:prod
-```
+`yarn start:dev`
 
-## Run tests
+### Production
 
-```bash
-# unit tests
-$ yarn run test
+`yarn start:prod`
 
-# e2e tests
-$ yarn run test:e2e
+### Test 
 
-# test coverage
-$ yarn run test:cov
-```
-
-## Implement flow create ticket for miss chat, miss call
-
-- chat session end -> trigger -> creat a ticket miss chat
+`yarn test`
